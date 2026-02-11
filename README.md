@@ -1,54 +1,27 @@
 # Near Places
 
-Yakınındaki yerleri harita üzerinde gösteren full-stack web uygulaması.
+A full-stack web application that displays nearby places (restaurants, cafes, pharmacies, etc.) on an interactive map using OpenStreetMap data.  
+**Live demo:** [Frontend on Vercel](https://near-places.vercel.app) | [Backend API on Railway](https://near-places-production.up.railway.app)
 
-## Tech Stack
+---
 
-- **Backend:** Java 21, Spring Boot 3.5, PostgreSQL, Hibernate
-- **Frontend:** HTML, CSS, Vanilla JS, Leaflet.js
-- **Veri kaynağı:** OpenStreetMap / Overpass API
+## 🚀 Live Demo
 
-## Proje Yapısı
-```
-near-places/
-├── server/   → Spring Boot REST API (port 8070)
-└── client/   → Leaflet.js harita arayüzü
-```
+| Service   | URL                                                                                          |
+|-----------|----------------------------------------------------------------------------------------------|
+| Frontend  | ✅ https://near-places-client.vercel.app                                                     |
+| Backend   | https://near-places-production.up.railway.app                                                |
+| API Test  | https://near-places-production.up.railway.app/api/places?latitude=39.9334&longitude=32.8597&radius=1000&amenity=restaurant |
 
-## Çalıştırma
+> ⚡ Backend cachelidir; ilk istek Overpass API'den gelir, sonrakiler PostgreSQL'den döner.
 
-### Backend
-```bash
-cd server
-mvn spring-boot:run
-```
+---
 
-### Gerekli environment variable'lar
-| Değişken | Açıklama | Default |
-|---|---|---|
-| DB_URL | PostgreSQL JDBC URL | jdbc:postgresql://localhost:5432/nearplaces |
-| DB_USERNAME | Veritabanı kullanıcısı | postgres |
-| DB_PASSWORD | Veritabanı şifresi | - |
+## 🧱 Tech Stack
 
-### Frontend
-`client/index.html` dosyasını tarayıcıda aç.
+**Backend:** Java 21, Spring Boot 3.5, PostgreSQL, JPA/Hibernate, Maven  
+**Frontend:** HTML, CSS, JavaScript, Leaflet.js  
+**Data Source:** OpenStreetMap / Overpass API  
+**Deployment:** Railway (backend) + Vercel (frontend)
 
-Deploy sonrası `client/main.js` içindeki `BACKEND_URL` değerini güncelle.
-
-## API
-```
-GET /api/places?latitude=39.9334&longitude=32.8597&radius=1000&amenity=restaurant
-```
-
-**Parametreler:**
-| Parametre | Tip | Açıklama |
-|---|---|---|
-| latitude | double | Enlem |
-| longitude | double | Boylam |
-| radius | int | Yarıçap (metre) |
-| amenity | string | OSM amenity tipi (varsayılan: restaurant) |
-
-## Cache Mantığı
-
-Aynı `(latitude, longitude, radius, amenity)` kombinasyonu daha önce sorgulandıysa
-sonuç PostgreSQL'den döner, Overpass API'ye istek atılmaz.
+---
