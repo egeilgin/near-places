@@ -1,5 +1,5 @@
 // ─── Backend URL ───────────────────────────────────────────────────────────────
-const BACKEND_URL = "http://localhost:8070/api/places";
+const BACKEND_URL = "https://near-places-production.up.railway.app/api/places";
 
 // ─── Harita ────────────────────────────────────────────────────────────────────
 const map = L.map('map').setView([39.9334, 32.8597], 13);
