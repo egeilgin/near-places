@@ -1,11 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Near Places</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 </head>
 <body>
-    
+    <div class="center">
+        <h1>Near Places</h1>
+        <div class="input-div">
+            <input type="number" id="latitude"  placeholder="Enlem (latitude)"  step="any">
+            <input type="number" id="longitude" placeholder="Boylam (longitude)" step="any">
+            <input type="number" id="radius"    placeholder="Yarıçap (metre)"   min="1">
+            <select id="amenity">
+                <option value="restaurant">🍽 Restoran</option>
+                <option value="pharmacy">💊 Eczane</option>
+                <option value="cafe">☕ Kafe</option>
+                <option value="hospital">🏥 Hastane</option>
+                <option value="bank">🏦 Banka</option>
+                <option value="fuel">⛽ Benzin İstasyonu</option>
+                <option value="school">🏫 Okul</option>
+                <option value="supermarket">🛒 Süpermarket</option>
+            </select>
+            <button onclick="searchPlaces()">Ara</button>
+        </div>
+        <div id="map"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="main.js"></script>
 </body>
 </html>

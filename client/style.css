@@ -1,0 +1,83 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f4f8;
+    padding: 24px;
+}
+
+h1 {
+    margin-bottom: 16px;
+    font-size: 2rem;
+    color: #1e293b;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+    background: #fff;
+    padding: 20px 24px;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    width: 100%;
+    max-width: 900px;
+}
+
+.input-div input,
+.input-div select {
+    flex: 1 1 160px;
+    padding: 10px 14px;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.input-div input:focus,
+.input-div select:focus {
+    border-color: #3b82f6;
+}
+
+.input-div button {
+    padding: 10px 28px;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.input-div button:hover:not(:disabled) {
+    background: #2563eb;
+}
+
+.input-div button:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+}
+
+#map {
+    height: 620px;
+    width: 100%;
+    max-width: 1100px;
+    border-radius: 16px;
+    border: 2px solid #e2e8f0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
