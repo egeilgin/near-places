@@ -9,7 +9,7 @@ A full-stack web application that displays nearby places (restaurants, cafes, ph
 
 | Service   | URL                                                                                          |
 |-----------|----------------------------------------------------------------------------------------------|
-| Frontend  | ✅ https://near-places-client.vercel.app                                                     |
+| Frontend  | ✅ https://near-places.vercel.app                                                     |
 | Backend   | https://near-places-production.up.railway.app                                                |
 | API Test  | https://near-places-production.up.railway.app/api/places?latitude=39.9334&longitude=32.8597&radius=1000&amenity=restaurant |
 
