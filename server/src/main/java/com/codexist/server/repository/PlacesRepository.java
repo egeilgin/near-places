@@ -11,7 +11,7 @@ import com.codexist.server.entity.PlacesEntity;
 public interface PlacesRepository extends JpaRepository<PlacesEntity, Long> {
     Optional<PlacesEntity> findByLatitudeAndLongitudeAndRadiusAndAmenity(
         double latitude,
-        double logitude,
+        double longitude,
         int radius,
         String amenity
     );
